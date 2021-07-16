@@ -1,0 +1,2 @@
+rootProject.name = "LoftMoney-2"
+include ':app'
