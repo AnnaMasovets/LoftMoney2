@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="28dp"
+    android:paddingEnd="24dp"
+    android:paddingStart="24dp"
+    android:paddingTop="28dp">
+
+    <TextView
+        android:id="@+id/moneyCellTitleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#666664"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/moneyCellValueView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="right"
+        android:textColor="#4a90e2"
+        android:textSize="20sp"/>
+
+
+
+</LinearLayout>

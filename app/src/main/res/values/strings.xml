@@ -3,4 +3,14 @@
     <string name="eddittext_name_hint">Title</string>
     <string name="eddittext_price_hint">Price</string>
     <string name="add_button_title">Add</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="expenses">расходы</string>
+    <string name="incomes">доходы</string>
+    <string name="balance">Баланс</string>
+    <string name="expenses_comment">Здесь будут расходы</string>
+    <string name="incomes_comment">Здесь будут доходы</string>
+    <array name="main_pager_titles">
+    <item>@string/expenses</item>
+    <item>@string/incomes</item>
+    <item>@string/balance</item>
 </resources>
