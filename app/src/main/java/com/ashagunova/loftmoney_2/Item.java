@@ -2,19 +2,25 @@ package com.ashagunova.loftmoney_2;
 
 public class Item {
 
-    private String title;
-    private String value;
+    private String name;
+    private String price;
+    private int currentPosition;
 
-    public Item(String title, String value) {
-        this.title = title;
-        this.value = value;
+    public Item(String name, String price, int currentPosition) {
+        this.name = name;
+        this.price = price;
+        this.currentPosition = currentPosition;
     }
 
-    public String getTitle() {
-        return title;
+    //public void setName(String name) { this.name = name; }
+
+    public String getName() {
+        return name;
     }
 
-    public String getValue() {
-        return value;
+    public String getPrice() {
+        return price;
     }
+
+    public int getCurrentPosition() { return currentPosition; }
 }

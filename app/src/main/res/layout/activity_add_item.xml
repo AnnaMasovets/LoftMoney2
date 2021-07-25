@@ -12,11 +12,13 @@
         android:layout_marginBottom="61dp"
         android:orientation="vertical">
         <EditText
+            android:id="@+id/et_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/eddittext_name_hint"/>
 
         <EditText
+            android:id="@+id/et_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/eddittext_price_hint"/>

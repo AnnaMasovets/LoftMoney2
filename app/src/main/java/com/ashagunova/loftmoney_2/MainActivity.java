@@ -1,10 +1,17 @@
 package com.ashagunova.loftmoney_2;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,28 +28,39 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        configureRecyclerView();
+        TabLayout tabLayout = findViewById(R.id.tabs);
+        ViewPager viewPager = findViewById(R.id.viewpager);
 
-        generateMoney();
+        viewPager.setAdapter(new BudgetFragmentAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT));
+
+        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.getTabAt(0).setText("Expenses");
+        tabLayout.getTabAt(1).setText("Income");
+
 
     }
 
-    private void generateMoney(){
+    static class BudgetFragmentAdapter extends FragmentPagerAdapter{
 
-        List<Item> items = new ArrayList<>();
-        items.add(new Item("Зуюная щетка", "70р"));
 
-        itemsAdapter.setData(items);
+        public BudgetFragmentAdapter(@NonNull FragmentManager fm, int behavior) {
+            super(fm, behavior);
+        }
+
+        @NonNull
+        @Override
+        public Fragment getItem(int position) {
+            if (position < 2) {
+                return BudgetFragment.newInstance(position);
+            } else
+                return null;
+        }
+
+        @Override
+        public int getCount() {
+            return 2;
+        }
     }
 
-    private void configureRecyclerView() {
 
-        itemsView = findViewById(R.id.itemsView);
-        itemsView.setAdapter(itemsAdapter);
-
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(),
-                LinearLayoutManager.VERTICAL, false);
-
-        itemsView.setLayoutManager(layoutManager);
-    }
 }
