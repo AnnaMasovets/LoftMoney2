@@ -2,9 +2,12 @@ package com.ashagunova.loftmoney_2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,7 +15,10 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.security.PublicKey;
@@ -29,6 +35,15 @@ public class BudgetFragment extends Fragment {
     private ItemsAdapter itemsAdapter = new ItemsAdapter();
     private List<Item> items = new ArrayList<>();
     private int currentPosition;
+    private SwipeRefreshLayout swipeRefreshLayout;
+
+    private MoneyApi moneyApi;
+
+    private static final String TYPE = "fragmentType";
+
+    public BudgetFragment() {
+    }
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,6 +69,13 @@ public class BudgetFragment extends Fragment {
             startActivityForResult(intent, REQUEST_CODE);
         });
 
+//        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//            @Override
+//            public void onRefresh() {
+//                loadItems();
+//            }
+//        });
+
         recyclerView.setAdapter(itemsAdapter);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
@@ -63,7 +85,6 @@ public class BudgetFragment extends Fragment {
         recyclerView.addItemDecoration(dividerItemDecoration);
 
         return view;
-
     }
 
 
@@ -73,9 +94,8 @@ public class BudgetFragment extends Fragment {
         String nameAdd = data.getStringExtra("name");
         String priceAdd = data.getStringExtra("price");
 
-        items.add(new Item(nameAdd, priceAdd, currentPosition));
+        items.add(new Item(nameAdd, priceAdd));
         itemsAdapter.setData(items);
-
 
     }
 
@@ -89,6 +109,30 @@ public class BudgetFragment extends Fragment {
 
     }
 
+//    public void loadItems() {
+//        final String token = PreferenceManager.getDefaultSharedPreferences(getContext()).getString(MainActivity.TOKEN, "");
+//
+//        Call<List<Item>> items = moneyApi.getMoneyItems(getArguments().getString(TYPE), token);
+//        items.enqueue(new Callback<List<Item>>() {
+//
+//            @Override
+//            public void onResponse(
+//                    final Call<List<Item>> call, final Response<List<Item>> response
+//            ) {
+//                itemsAdapter.clearItems();
+//                swipeRefreshLayout.setRefreshing(false);
+//                List<Item> items = response.body();
+//                for (Item item : items) {
+//                    itemsAdapter.addItem(item);
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(final Call<List<Item>> call, final Throwable t) {
+//                swipeRefreshLayout.setRefreshing(false);
+//            }
+//        });
+//    }
 
 
 }
