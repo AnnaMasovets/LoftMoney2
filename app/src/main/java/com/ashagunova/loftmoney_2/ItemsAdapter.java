@@ -44,6 +44,16 @@ public class ItemsAdapter extends RecyclerView.Adapter <ItemsAdapter.ItemViewHol
 
     }
 
+    public void addItem(Item item) {
+        itemLis.add(item);
+        notifyDataSetChanged();
+    }
+
+    public void clearItems() {
+        itemLis.clear();
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getItemCount() {
         return itemLis.size();
@@ -62,15 +72,17 @@ public class ItemsAdapter extends RecyclerView.Adapter <ItemsAdapter.ItemViewHol
         }
 
         public void bind(Item item) {
-            name.setText(item.getName());
-            price.setText(new SpannableString(item.getPrice() + "\u2880"));
 
-            if (item.getCurrentPosition() == 0) {
-                price.setTextColor(ContextCompat.getColor(price.getContext(), R.color.expenseColor));
-            } else if (item.getCurrentPosition() == 1) {
-                price.setTextColor(ContextCompat.getColor(price.getContext(), R.color.incomeColor));
 
-            }
+//            name.setText(item.getName());
+//            price.setText(new SpannableString(item.getPrice() + "\u2880"));
+//
+//            if (item.getCurrentPosition() == 0) {
+//                price.setTextColor(ContextCompat.getColor(price.getContext(), R.color.expenseColor));
+//            } else if (item.getCurrentPosition() == 1) {
+//                price.setTextColor(ContextCompat.getColor(price.getContext(), R.color.incomeColor));
+//
+//            }
         }
     }
 }

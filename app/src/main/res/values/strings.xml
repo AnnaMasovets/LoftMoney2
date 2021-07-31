@@ -1,16 +1,16 @@
 <resources>
     <string name="app_name">LoftMoney</string>
-    <string name="eddittext_name_hint">Title</string>
-    <string name="eddittext_price_hint">Price</string>
-    <string name="add_button_title">Add</string>
+    <string name="eddittext_name_hint">Название</string>
+    <string name="eddittext_price_hint">Цена</string>
+    <string name="add_button_title">Добавить</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="expenses">расходы</string>
-    <string name="incomes">доходы</string>
-    <string name="balance">Баланс</string>
-    <string name="expenses_comment">Здесь будут расходы</string>
-    <string name="incomes_comment">Здесь будут доходы</string>
-    <array name="main_pager_titles">
-    <item>@string/expenses</item>
-    <item>@string/incomes</item>
-    <item>@string/balance</item>
+
+    <string name="Expenses" translatable="false">Расходы</string>
+    <string name="Income" translatable="false">Доходы</string>
+    <string name="connection_lost" translatable="false">Sorry, we can\'t load your money list</string>
+    <string name="fill_fields" translatable="false">Please fill all fields</string>
+    <string name="success_added" translatable="false">Income was successfully added</string>
+    <string name="activity_main_toolbar_title" translatable="false">LoftMoney</string>
+
+
 </resources>
