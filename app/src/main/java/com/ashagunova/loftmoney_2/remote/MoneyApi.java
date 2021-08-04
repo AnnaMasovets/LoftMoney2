@@ -1,10 +1,7 @@
-package com.ashagunova.loftmoney_2;
-
-import java.util.List;
+package com.ashagunova.loftmoney_2.remote;
 
 import io.reactivex.Completable;
 import io.reactivex.Single;
-import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -15,8 +12,6 @@ public interface MoneyApi {
     @GET("./items")
     Single<MoneyResponse> getMoneyItems(@Query("type") String type);
 
-    @GET("./items")
-    Call<List<Item>> getMoneyItems(@Query("type") String type, @Query("auth-token") String token);
 
     @POST("./items/add")
     @FormUrlEncoded

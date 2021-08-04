@@ -10,7 +10,8 @@
     <string name="connection_lost" translatable="false">Sorry, we can\'t load your money list</string>
     <string name="fill_fields" translatable="false">Please fill all fields</string>
     <string name="success_added" translatable="false">Income was successfully added</string>
-    <string name="activity_main_toolbar_title" translatable="false">LoftMoney</string>
+    <string name="activity_main_toolbar_title" translatable="false">Учёт бюджета</string>
+    <string name="action_login">Войти</string>
 
 
 </resources>

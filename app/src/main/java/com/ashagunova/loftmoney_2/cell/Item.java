@@ -1,4 +1,6 @@
-package com.ashagunova.loftmoney_2;
+package com.ashagunova.loftmoney_2.cell;
+
+import com.ashagunova.loftmoney_2.remote.MoneyRemoteItem;
 
 public class Item {
 
