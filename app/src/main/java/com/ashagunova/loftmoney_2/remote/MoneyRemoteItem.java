@@ -1,4 +1,4 @@
-package com.ashagunova.loftmoney_2;
+package com.ashagunova.loftmoney_2.remote;
 
 import com.google.gson.annotations.SerializedName;
 

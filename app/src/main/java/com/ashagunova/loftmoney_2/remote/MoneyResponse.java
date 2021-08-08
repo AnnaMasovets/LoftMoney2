@@ -1,6 +1,7 @@
-package com.ashagunova.loftmoney_2;
+package com.ashagunova.loftmoney_2.remote;
 
 
+import com.ashagunova.loftmoney_2.remote.MoneyRemoteItem;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
