@@ -1,14 +1,12 @@
-package com.ashagunova.loftmoney_2.login;
+package com.ashagunova.loftmoney_2.screens.login;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.ashagunova.loftmoney_2.remote.AuthApi;
-import com.ashagunova.loftmoney_2.remote.AuthResponse;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 public class LoginViewModel extends ViewModel {

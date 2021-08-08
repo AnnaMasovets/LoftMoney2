@@ -1,5 +1,7 @@
-package com.ashagunova.loftmoney_2.login;
+package com.ashagunova.loftmoney_2.screens.login;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Toast;
@@ -10,6 +12,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.ashagunova.loftmoney_2.LoftApp;
+import com.ashagunova.loftmoney_2.MainActivity;
 import com.ashagunova.loftmoney_2.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -45,8 +48,14 @@ public class LoginActivity extends AppCompatActivity {
         });
         loginViewModel.authToken.observe(this, authToken -> {
             if (!TextUtils.isEmpty(authToken)) {
+                SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.app_name), 0);
+                sharedPreferences.edit().putString(LoftApp.AUTH_KEY, authToken).apply();
 
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
             }
+
         });
     }
 }

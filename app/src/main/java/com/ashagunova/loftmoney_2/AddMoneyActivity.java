@@ -49,7 +49,8 @@ public class AddMoneyActivity extends AppCompatActivity {
             disposable = ((LoftApp) getApplication()).moneyApi.postMoney(
                     Integer.parseInt(etPrice.getText().toString()),
                     etName.getText().toString(),
-                    "income"
+                    "income",
+                    getSharedPreferences(getString(R.string.app_name), 0).getString(LoftApp.AUTH_KEY, "")
             )
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())

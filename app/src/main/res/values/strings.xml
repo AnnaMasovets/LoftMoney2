@@ -11,7 +11,15 @@
     <string name="fill_fields" translatable="false">Please fill all fields</string>
     <string name="success_added" translatable="false">Income was successfully added</string>
     <string name="activity_main_toolbar_title" translatable="false">Учёт бюджета</string>
-    <string name="action_login">Войти</string>
+    <string name="action_login" translatable="false">Войти</string>
+    <string name="title_expense" translatable="false">Расходы</string>
+    <string name="title_incomes" translatable="false">Доходы</string>
+    <string name="title_balance" translatable="false">Баланс</string>
+    <string name="action_yes" translatable="false">Да</string>
+    <string name="action_no" translatable="false">Нет</string>
+    <string name="delete_items_message" translatable="false">Вы точно хотите удалить выбранные расходы?</string>
+    <string name="delete_items_title" translatable="false">Вы уверены?</string>
+    <string name="selected" translatable="false">Выделено:</string>
 
 
 </resources>
