@@ -13,4 +13,5 @@
     <color name="selectionColorPrimary">#333F59</color>
     <color name="inactiveTextColor">#8BAAEF</color>
     <color name="cellSelectionColor">#EFEFEF</color>
+    <color name="orange">#FF9E57</color>
 </resources>
