@@ -65,10 +65,10 @@ public class AddItemActivity extends AppCompatActivity {
         addButton = findViewById(R.id.add_button);
         addButton.setOnClickListener(v -> {
             if (!TextUtils.isEmpty(mName) && !TextUtils.isEmpty(mPrice)) {
-                setResult(
+                    setResult(
                         RESULT_OK,
                         new Intent().putExtra("name", mName).putExtra("price", mPrice));
-                finish();
+                    finish();
             }
         });
 

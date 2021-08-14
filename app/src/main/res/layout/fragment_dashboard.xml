@@ -63,7 +63,7 @@
             android:layout_height="48dp"
             android:background="@color/colorPrimary"
             app:tabIndicatorColor="@color/colorIndicator"
-            app:tabTextColor="@color/incomeColor"
+            app:tabTextColor="@color/inactiveTextColor"
             app:tabSelectedTextColor="@android:color/white"/>
 
     </androidx.viewpager.widget.ViewPager>

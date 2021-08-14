@@ -167,7 +167,7 @@ public class BudgetFragment extends Fragment implements BudgetEditListener {
     }
 
     private void configureViews(View view) {
-        RecyclerView recyclerView = view.findViewById(R.id.itemsView);
+        RecyclerView recyclerView = view.findViewById(R.id.recycler);
         recyclerView.setAdapter(itemsAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,
                 false));
@@ -196,7 +196,7 @@ public class BudgetFragment extends Fragment implements BudgetEditListener {
             itemsAdapter.setData(moneyItems);
         });
 
-        budgetViewModel.isEditMode.observe(this, isEditMode -> {
+        budgetViewModel.isEditMode.observe(getViewLifecycleOwner(), isEditMode -> {
             btnAdd.setVisibility(isEditMode ? View.GONE : View.VISIBLE);
 
             Fragment parentFragment = getParentFragment();
@@ -205,20 +205,20 @@ public class BudgetFragment extends Fragment implements BudgetEditListener {
             }
         });
 
-        budgetViewModel.selectedCounter.observe(this, newCount -> {
+        budgetViewModel.selectedCounter.observe(getViewLifecycleOwner(), newCount -> {
             Fragment parentFragment = getParentFragment();
             if (parentFragment instanceof EditModeListener) {
                 ((EditModeListener) parentFragment).onCounterChanged(newCount);
             }
         });
 
-        budgetViewModel.messageString.observe(this, message -> {
+        budgetViewModel.messageString.observe(getViewLifecycleOwner(), message -> {
             if (!message.equals("")) {
                 showToast(message);
             }
         });
 
-        budgetViewModel.messageInt.observe(this, message -> {
+        budgetViewModel.messageInt.observe(getViewLifecycleOwner(), message -> {
             if (message > 0) {
                 showToast(getString(message));
             }

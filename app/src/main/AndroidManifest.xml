@@ -14,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoftMoney2">
         <activity android:name=".AddItemActivity" android:theme="@style/AddItemTheme" />
+        <activity android:name=".AddMoneyActivity" />
         <activity android:name=".screens.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

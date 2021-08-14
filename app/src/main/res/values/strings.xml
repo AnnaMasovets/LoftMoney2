@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LoftMoney</string>
+
     <string name="eddittext_name_hint">Название</string>
     <string name="eddittext_price_hint">Цена</string>
     <string name="add_button_title">Добавить</string>
@@ -20,6 +20,7 @@
     <string name="delete_items_message" translatable="false">Вы точно хотите удалить выбранные расходы?</string>
     <string name="delete_items_title" translatable="false">Вы уверены?</string>
     <string name="selected" translatable="false">Выделено:</string>
+    <string name="balance_finance_title" translatable="false">Доступные финансы</string>
 
 
 </resources>
